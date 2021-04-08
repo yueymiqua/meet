@@ -1,5 +1,9 @@
 # Meet Application
 
+## Project Objective
+To build a serverless, progressive web application (PWA) with React using a
+test-driven development (TDD) technique. The application uses the Google
+Calendar API to fetch upcoming events.
 
 ## FEATURE 1: FILTER EVENTS BY CITY
 
@@ -68,7 +72,7 @@
  - As a: User
  - I should be able to: open the app on the desktop
  - So that: I can see a static list of events even when there is no internet connection
- 
+
 ### Scenario 1: Show cached data when there’s no internet connection.
  - Given: all events that were loaded when there was connection are stored in cache folder
  - When: user navigates to event page without internet connection
