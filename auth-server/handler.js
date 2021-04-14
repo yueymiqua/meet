@@ -141,7 +141,7 @@ module.exports.getCalendarEvents = async (event) => {
     console.error(error);
     return {
       statusCode: 500,
-      body: JSON.stringify(err),
+      body: JSON.stringify(error),
     };
   });
 };
