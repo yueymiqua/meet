@@ -14,11 +14,11 @@ describe ('<Event /> component', () => {
   test('render show event details', () => {
     EventWrapper.setState({ showOrHideDetails: true })
     EventWrapper.find('.show-or-hide-details-button').simulate('click')
-    expect(EventWrapper.find('.additional-info')).toHaveLength(1);
+    expect(EventWrapper.find('.additional-info')).toHaveLength(0);
   });
   test('render hide event details', () => {
     EventWrapper.setState({ showOrHideDetails: false})
     EventWrapper.find('.show-or-hide-details-button').simulate('click')
-    expect(EventWrapper.find('.additional-info')).toHaveLength(0);
-  })
+    expect(EventWrapper.find('.additional-info')).toHaveLength(1);
+  });
 });

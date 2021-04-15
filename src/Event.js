@@ -20,14 +20,23 @@ class Event extends Component {
 
   render() {
     let { showOrHideDetails } = this.state;
+    let { event } = this.props;
     return (
       <div className="event-container">
-        <div className="basic-info"/>
+        <div className="basic-info">
+          <div className="name">{ event.summary }</div>
+          <br></br>
+          <div className="event-start-dateTime">{ event.start.dateTime }</div>
+          <div className="event-start-timeZone">{ event.start.timeZone }</div>
+        </div>
         {showOrHideDetails
-          ? <div className="additional-info"/>
+          ? <div className="additional-info">
+            <a href={ event.htmlLink } className="event-link">See details on Google calendar</a>
+            <div className="event-description">{ event.description }</div>
+          </div>
           : null
         }
-        <button className="show-or-hide-details-button" onClick={this.changeHideShow(showOrHideDetails)}>Hide/Show Details</button>
+        <button className="details-btn"  onClick={() => this.changeHideShow(showOrHideDetails)}>Hide/Show Details</button>
       </div> 
       
     )

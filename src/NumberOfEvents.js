@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class NumberOfEvents extends Component {
   state = {
-    query: 32, // by default if no number is inputted, there will be maximum 32 events shown
+    query: 32, // by default if no number is inputted, there will be maximum of 32 events
   }
 
   updateNumberOfEvents = (event) => {
@@ -13,8 +13,9 @@ class NumberOfEvents extends Component {
   }
 
   render() {
-    return <div className="NumberOfEvents">
-    <input type="number" className="number-of-events" value={this.state.query} onChange={this.updateNumberOfEvents}/>
+    return <div className="numberOfEvents">
+    <label>Number Of Events</label>
+    <input type="number" className="eventNumberInput" value={this.state.query} onChange={this.updateNumberOfEvents}/>
     </div>
   }
 }
