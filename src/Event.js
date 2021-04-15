@@ -24,15 +24,15 @@ class Event extends Component {
     return (
       <div className="event-container">
         <div className="basic-info">
-          <div className="name">{ event.summary }</div>
-          <br></br>
-          <div className="event-start-dateTime">{ event.start.dateTime }</div>
-          <div className="event-start-timeZone">{ event.start.timeZone }</div>
+          <h1 className="name">{ event.summary }</h1>
+          <p className="event-start-dateTime">{ event.start.dateTime }</p>
+          <p className="event-location">{ event.location }</p>
         </div>
         {showOrHideDetails
           ? <div className="additional-info">
+            <h2>About Event</h2>
             <a href={ event.htmlLink } className="event-link">See details on Google calendar</a>
-            <div className="event-description">{ event.description }</div>
+            <p className="event-description">{ event.description }</p>
           </div>
           : null
         }
