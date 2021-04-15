@@ -61,5 +61,13 @@ describe('<App /> integration', () => {
     expect(AppWrapper.state('events')).toEqual(allEvents);
     AppWrapper.unmount();
   });
+  test('number of events displayed reflects the number of events input field', () => {
+    const AppWrapper = mount(<App />);
+    const numberOfEventsToDisplay = AppWrapper.find(NumberOfEvents).state('query');
+    expect(AppWrapper.find(EventList).prop('events')).toHaveLength(numberOfEventsToDisplay);
+    // expect(EventListWrapper.find(Event)).toHaveLength(mockData.length);
+
+    AppWrapper.unmount();
+  })
 });
 
