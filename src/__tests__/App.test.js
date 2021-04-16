@@ -61,13 +61,13 @@ describe('<App /> integration', () => {
     expect(AppWrapper.state('events')).toEqual(allEvents);
     AppWrapper.unmount();
   });
-  test('number of events displayed reflects the number of events input field', () => {
-    const AppWrapper = mount(<App />);
+  test('number of events displayed reflects the number of events input field', async () => {
+    const AppWrapper = await mount(<App />);
     const numberOfEventsToDisplay = AppWrapper.find(NumberOfEvents).state('query');
+    console.log(AppWrapper.find(EventList).prop('events'));
+    AppWrapper.update();
     expect(AppWrapper.find(EventList).prop('events')).toHaveLength(numberOfEventsToDisplay);
-    // expect(EventListWrapper.find(Event)).toHaveLength(mockData.length);
-
     AppWrapper.unmount();
-  })
+  });
 });
 
