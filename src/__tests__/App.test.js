@@ -61,13 +61,26 @@ describe('<App /> integration', () => {
     expect(AppWrapper.state('events')).toEqual(allEvents);
     AppWrapper.unmount();
   });
+  test('EventList events is being populated by MockData', async () => {
+    const AppWrapper = await mount(<App />)
+    await AppWrapper.update();
+    expect(AppWrapper.find(EventList).prop('events').length).not.toEqual(0); // Greater than 0 means list is not empty
+    AppWrapper.unmount();
+  })
   test('number of events displayed reflects the number of events input field', async () => {
     const AppWrapper = await mount(<App />);
     const numberOfEventsToDisplay = AppWrapper.find(NumberOfEvents).state('query');
-    console.log(AppWrapper.find(EventList).prop('events'));
     AppWrapper.update();
-    expect(AppWrapper.find(EventList).prop('events')).toHaveLength(numberOfEventsToDisplay);
+    expect(AppWrapper.find(EventList).prop('events')).toHaveLength(numberOfEventsToDisplay); // # of events shown is 32 by default
     AppWrapper.unmount();
   });
+  test('changing number of events input field will change number of events displayed', async () => {
+    const AppWrapper = await mount(<App />);
+    const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+    await NumberOfEventsWrapper.find('.eventNumberInput').simulate('change', { target: { value: 5 } });
+    AppWrapper.update();
+    expect(AppWrapper.find(EventList).prop('events').length).toEqual(5); // Force change value to 5 to see if 5 events are displayed
+    AppWrapper.unmount();
+  })
 });
 
