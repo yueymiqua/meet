@@ -20,14 +20,12 @@ class Event extends Component {
 
   render() {
     let { showOrHideDetails } = this.state;
-    let { event } = this.props;
+    const { event } = this.props;
     return (
       <div className="event-container">
-        <div className="basic-info">
-          <h1 className="name">{ event.summary }</h1>
-          <p className="event-start-dateTime">{ event.start.dateTime }</p>
-          <p className="event-location">{ event.location }</p>
-        </div>
+        <h1 className="name">{ event.summary }</h1>
+        <p className="event-start-dateTime">{ event.start.dateTime }</p>
+        <p className="event-location">{ event.location }</p>
         {showOrHideDetails
           ? <div className="additional-info">
             <h2>About Event</h2>
