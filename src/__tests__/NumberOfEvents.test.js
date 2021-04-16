@@ -10,33 +10,27 @@ describe ('<NumberOfEvents /> Component', () => {
 
   // Test #1
   test('renders input field for number of events', () => {
-    expect(NumberOfEventsWrapper.find('.number-of-events')).toHaveLength(1);
+    expect(NumberOfEventsWrapper.find('.numberOfEvents')).toHaveLength(1);
   });
 
   // Test #2
-  test('renders text input correctly', () => {
-    const query = NumberOfEventsWrapper.state('query');
-    expect(NumberOfEventsWrapper.find('.number-of-events').prop('value')).toBe(query)
+  test('renders input field and is not empty', () => {
+    expect(NumberOfEventsWrapper.find('.numberOfEvents')).not.toEqual(0);
   });
 
   // Test #3
-  test("input type is entered is a number", () => {
-    expect(NumberOfEventsWrapper.find('.number-of-events').at(0).props().type).toEqual('number');
-  })
+  test('renders text input correctly', () => {
+    const query = NumberOfEventsWrapper.state('query');
+    expect(NumberOfEventsWrapper.find('.eventNumberInput').prop('value')).toBe(query)
+  });
 
   // Test #4
-  test("input value is by default 32", () => {
-    expect(NumberOfEventsWrapper.find('.number-of-events').at(0).props().value).toEqual(32);
+  test("input type is entered is a number", () => {
+    expect(NumberOfEventsWrapper.find('.eventNumberInput').at(0).props().type).toEqual('number');
   })
 
   // Test #5
-  test('change state when input changes', () => {
-    NumberOfEventsWrapper.setState({
-      query: 3
-    })
-    const eventObject = { target: { value: 5 }}
-    NumberOfEventsWrapper.find('.number-of-events').simulate('change', eventObject)
-    expect(NumberOfEventsWrapper.state('query')).toBe(5)
+  test("input value is by default 32", () => {
+    expect(NumberOfEventsWrapper.find('.eventNumberInput').at(0).props().value).toEqual(32);
   })
-
 });
