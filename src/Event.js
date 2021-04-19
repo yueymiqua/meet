@@ -22,12 +22,12 @@ class Event extends Component {
     let { showOrHideDetails } = this.state;
     const { event } = this.props;
     return (
-      <div className="event-container">
+      <div className="event event-container">
         <h1 className="name">{ event.summary }</h1>
         <p className="event-start-dateTime">{ event.start.dateTime }</p>
         <p className="event-location">{ event.location }</p>
         {showOrHideDetails
-          ? <div className="additional-info">
+          ? <div className="event__Details additional-info">
             <h2>About Event</h2>
             <a href={ event.htmlLink } className="event-link">See details on Google calendar</a>
             <p className="event-description">{ event.description }</p>
