@@ -42,8 +42,9 @@ const removeQuery = () => {
 
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
+  const slash = '/';
   const { access_token } = await fetch(
-    'https://f7b3bvhbr2.execute-api.ca-central-1.amazonaws.com/dev/api/token' + '/' + encodeCode
+    'https://f7b3bvhbr2.execute-api.ca-central-1.amazonaws.com/dev/api/token' + slash + encodeCode
   )
     .then((res) => {
       return res.json();
@@ -63,9 +64,10 @@ export const getEvents = async () => {
     return mockData;
   }
   const token = await getAccessToken();
+  const slash = '/';
   if (token) {
     removeQuery();
-    const url = 'https://f7b3bvhbr2.execute-api.ca-central-1.amazonaws.com/dev/api/get-events' + '/' + token;
+    const url = 'https://f7b3bvhbr2.execute-api.ca-central-1.amazonaws.com/dev/api/get-events' + slash + token;
     const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);
