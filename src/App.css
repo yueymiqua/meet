@@ -209,3 +209,9 @@ input[type='number'] {
     margin: 0 auto;
   }
 }
+
+.Alert {
+  left: 0;
+  right: 0;
+  margin-top: 115px;
+}
