@@ -116,7 +116,7 @@ input[type='number'] {
 }
 
 .numberOfEvents {
-  width: 250px;
+  width: 300px;
   margin: 20px auto;
   text-align: center;
 }
@@ -216,8 +216,8 @@ input[type='number'] {
 }
 
 .Alert {
-  left: 0;
-  right: 0;
   display: flex;
   position: relative;
+  text-align: center;
+  justify-content: center;
 }
