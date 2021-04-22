@@ -5,6 +5,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
 import './nprogress.css';
+import { WarningAlert } from './alert';
 
 class App extends Component {
   state = {
@@ -12,14 +13,29 @@ class App extends Component {
     locations: [],
     numberOfEvents: 32,
     selectedLocation: "all",
+    infoText: '',
   }
 
   componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
-      if (this.mounted) {
-        this.setState({ events: events.slice(0, this.state.numberOfEvents), locations: extractLocations(events) });
+      if(!navigator.onLine) {
+        if (this.mounted) {
+          this.setState({ 
+            infoText: 'Warning: No internet connection. Events displayed may not be up to date', 
+            events: events.slice(0, this.state.numberOfEvents), 
+            locations: extractLocations(events) 
+          });
+        }
+      } else {
+        if (this.mounted) {
+          this.setState({ 
+            events: events.slice(0, this.state.numberOfEvents), 
+            locations: extractLocations(events) 
+          });
+        }
       }
+
     });
   }
 
@@ -49,6 +65,8 @@ class App extends Component {
     const { locations, numberOfEvents, events } = this.state;
     return (
       <div className="App">
+        <h1>yoUr Meet App</h1>
+        <WarningAlert className="WarningAlert" text={this.state.infoText}/>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} numberOfEvents={numberOfEvents} />
         <EventList events={events}/>
