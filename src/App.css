@@ -218,5 +218,6 @@ input[type='number'] {
 .Alert {
   left: 0;
   right: 0;
-  margin-top: -20px;
+  display: flex;
+  position: relative;
 }
