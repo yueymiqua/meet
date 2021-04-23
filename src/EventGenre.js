@@ -10,10 +10,10 @@ const EventGenre = ({ events }) => {
   }, [events]);
 
   const getData = () => {
-    const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
+    const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular', 'AngularJS', 'AngularJS-Remote', 'Node.js', 'JavaScript!!'];
     const data = genres.map((genre) => {
       const value = events.filter(({ summary }) => summary.split(' ').includes(genre)).length;
-        return { name: genre, value};
+        return { name: genre, value };
       })
     return data.filter((data) => data.value >= 1);
   };
