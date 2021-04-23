@@ -3,6 +3,7 @@
   text-align: center;
   padding: 2% 5%;
   background: #393e46;
+  color: ivory;
 }
 
 .App * {
@@ -66,6 +67,7 @@ input[type='number'] {
   text-align: left;
   padding: 8px 6px 8px 10px;
   background-color: #eee;
+  color: black;
   cursor: default;
 }
 
