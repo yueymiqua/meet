@@ -1,26 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+
+const getData = (events = []) => {
+  const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
+  const data = genres.map((genre) => {
+    const relevantEvents = events.filter(({ summary }) => {
+      const words = summary.split(" ");
+      return words.some(word => word.indexOf(genre) >= 0)
+    });
+    
+    return { name: genre, value: relevantEvents.length };
+  })
+  return data.filter((data) => data.value >= 1);
+};
 
 const EventGenre = ({ events }) => {
   const colors = ['#e3fdfd', '#cbf1f5', '#a6e3e9', '#71c9ce', '#30e3ca']
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    setData(() => getData());
-  }, [events]);
-
-  const getData = () => {
-    const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
-    const data = genres.map((genre) => {
-      const relevantEvents = events.filter(({ summary }) => {
-        const words = summary.split(" ");
-        return words.some(word => word.indexOf(genre) >= 0)
-      });
-      
-      return { name: genre, value: relevantEvents.length };
-    })
-    return data.filter((data) => data.value >= 1);
-  };
+  const data = getData(events);
 
   return (
     <ResponsiveContainer height={400}>
