@@ -34,7 +34,10 @@ class Event extends Component {
           </div>
           : null
         }
-        <button className="details-btn"  onClick={() => this.changeHideShow(showOrHideDetails)}>Hide/Show Details</button>
+        {showOrHideDetails
+          ?<button className="details-btn btn-text"  onClick={() => this.changeHideShow(showOrHideDetails)}>Hide Details</button>
+          :<button className="details-btn btn-text"  onClick={() => this.changeHideShow(showOrHideDetails)}>Show Details</button>
+        }
       </div> 
       
     )

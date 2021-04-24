@@ -67,7 +67,7 @@ class App extends Component {
     const { events, locations } = this.state;
     const data = locations.map((location) => {
       const number = events.filter((event) => event.location === location).length;
-      const city = location.split(' ').shift();
+      const city = location.split(',').shift();
       return {number, city};
     })
     return data;
@@ -94,7 +94,7 @@ class App extends Component {
             </ScatterChart>
           </ResponsiveContainer>
         </div>
-
+        <h2 className="nearby-events-label">Nearby Events:</h2>
         <EventList events={events}/>
       </div>
     );
