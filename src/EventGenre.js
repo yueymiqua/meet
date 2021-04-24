@@ -14,7 +14,7 @@ const EventGenre = ({ events }) => {
     const data = genres.map((genre) => {
       const relevantEvents = events.filter(({ summary }) => {
         const words = summary.split(" ");
-        return words.indexOf(genre) >= 0
+        return words.some(word => word.indexOf(genre) >= 0)
       });
       
       return { name: genre, value: relevantEvents.length };
