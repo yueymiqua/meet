@@ -14,5 +14,32 @@ Your Meet App also functions offline thanks to it being a Progressive Web Applic
 5. Enjoy using the app!
 
 ## Local Dependancies:
+ - "@testing-library/jest-dom": "^5.11.10",
+ - "@testing-library/react": "^11.2.6",
+ - "@testing-library/user-event": "^12.8.3",
+ - "atatus-spa": "^4.3.2",
+ - "axios": "^0.21.1",
+ - "nprogress": "^0.2.0",
+ - "react": "^17.0.2",
+ - "react-dom": "^17.0.2",
+ - "react-scripts": "4.0.3",
+ - "recharts": "^2.0.9",
+ - "web-vitals": "^0.2.4",
+ - "workbox-background-sync": "^5.1.4",
+ - "workbox-broadcast-update": "^5.1.4",
+ - "workbox-cacheable-response": "^5.1.4",
+ - "workbox-core": "^5.1.4",
+ - "workbox-expiration": "^5.1.4",
+ - "workbox-google-analytics": "^5.1.4",
+ - "workbox-navigation-preload": "^5.1.4",
+ - "workbox-precaching": "^5.1.4",
+ - "workbox-range-requests": "^5.1.4",
+ - "workbox-routing": "^5.1.4",
+ - "workbox-strategies": "^5.1.4",
+ - "workbox-streams": "^5.1.4"
 
 ## Dev Dependancies:
+ - "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
+ - "gh-pages": "^3.1.0",
+ - "jest-cucumber": "^3.0.1",
+ - "puppeteer": "^8.0.0"

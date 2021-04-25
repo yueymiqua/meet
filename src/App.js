@@ -82,7 +82,7 @@ class App extends Component {
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} numberOfEvents={numberOfEvents} />
         
-        <h2 className="chart-label">Pie Chart vs. Scatter Chart</h2>
+        <h2 className="chart-label">Visual Breakdown of Upcoming Events:</h2>
         <div className="data-vis-wrapper">
           <EventGenre events={events} />
           <ResponsiveContainer height={400} >
@@ -95,7 +95,7 @@ class App extends Component {
             </ScatterChart>
           </ResponsiveContainer>
         </div>
-        <h2 className="nearby-events-label">Nearby Events:</h2>
+        <h2 className="nearby-events-label">List of Upcoming Events:</h2>
         <EventList events={events}/>
       </div>
     );
