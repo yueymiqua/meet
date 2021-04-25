@@ -33,6 +33,8 @@ Event data used for this application are CareerFoundry events.
 
 ## FEATURE 1: FILTER EVENTS BY CITY
 
+![List-of-cities](/IMG/list-of-cities.png)
+
 ### Feature 1 User Story:
  - As a: User
  - I should be able to: type in a city to the filter box
@@ -55,6 +57,8 @@ Event data used for this application are CareerFoundry events.
 
 
 ## FEATURE 2: SHOW/HIDE AN EVENT’S DETAILS
+
+![Event-list-screenshot](/IMG/event-list-screenshot.png)
 
 ### Feature 2 User Story:
  - As a: User
@@ -93,6 +97,8 @@ Event data used for this application are CareerFoundry events.
 
 
 ## FEATURE 4: USE THE APP WHEN OFFLINE
+
+![offline-warning](/IMG/offline-warning.png)
 
 ### Feature 1 User Story:
  - As a: User
