@@ -52,6 +52,18 @@ input[type='number'] {
   position: relative;
 }
 
+.data-vis-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.chart-label {
+  color: #08d9d6;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
 .suggestions {
   width: 250px;
   position: absolute;
