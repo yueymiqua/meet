@@ -6,6 +6,37 @@
   color: ivory;
 }
 
+.Landingpage {
+  height: 100vh;
+}
+
+img[alt*='landing-page'] {
+  border: darkgoldenrod;
+  border-style: solid;
+  width: 50vw;
+  height: auto;
+}
+
+.welcome-header {
+  color: #08d9d6;
+}
+
+.username-input,
+.landing-button {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.landing-button:hover {
+  background: grey;
+  cursor: pointer;
+}
+
 .App * {
   box-sizing: border-box;
 }

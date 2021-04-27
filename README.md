@@ -37,8 +37,8 @@ Event data used for this application are CareerFoundry events.
 
 ### Feature 1 User Story:
  - As a: User
- - I should be able to: type in a city to the filter box
- - So that: I can see a list of upcoming events for that city
+ - I should be able to: start typing in a city name to the filter box
+ - So that: if that city name matches one on the list, I can see all upcoming events for that city
 
 ### Scenario 1: When user hasn’t searched for a city, show upcoming events from all cities.
  - Given: User has not search a city
