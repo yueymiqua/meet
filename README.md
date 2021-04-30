@@ -157,4 +157,4 @@ Event data used for this application are CareerFoundry events.
  - "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
  - "gh-pages": "^3.1.0",
  - "jest-cucumber": "^3.0.1",
- - "puppeteer": "^8.0.0"    
+ - "puppeteer": "^8.0.0"
